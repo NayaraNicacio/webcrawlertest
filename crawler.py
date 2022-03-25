@@ -9,8 +9,8 @@ urls = ["https://www.vultr.com/pricing/#optimized-cloud-compute",
             ]
 
 for i in urls:
- print(i)
 
-
-
-
+    response = requests.get(i)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    print(response)
+    print(soup.prettify())
